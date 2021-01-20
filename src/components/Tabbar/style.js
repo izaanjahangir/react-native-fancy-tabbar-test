@@ -25,7 +25,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     width: '100%',
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
   centerIcon: {
     zIndex: -10,
@@ -34,5 +34,8 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: 35,
     transform: [{translateY: -5}],
+    bottom: 20,
+    width: 50,
+    height: 50,
   },
 });

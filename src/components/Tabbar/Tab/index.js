@@ -46,11 +46,20 @@ function Tab(props) {
     iconSource = require('../../../assets/icons/settings-active.png');
   }
 
+  function handlePress() {
+    if (props.onPress) {
+      return props.onPress();
+    }
+  }
+
   return (
-    <TouchableOpacity
-      underlayColor={'transparent'}
-      onPress={() => alert('clicked')}>
-      <View style={{...props.iconContainerStyles, bottom: 20}}>
+    <TouchableOpacity onPress={handlePress}>
+      <View
+        style={[
+          style.activeTab,
+          {bottom: 11, ...props.iconContainerStyles},
+          props.active && {backgroundColor: 'white'},
+        ]}>
         <Image style={style.icon} source={iconSource} />
       </View>
     </TouchableOpacity>
