@@ -25,6 +25,14 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     width: '100%',
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+  },
+  centerIcon: {
+    zIndex: -10,
+    position: 'relative',
+    backgroundColor: '#275aa2',
+    padding: 10,
+    borderRadius: 35,
+    transform: [{translateY: -5}],
   },
 });

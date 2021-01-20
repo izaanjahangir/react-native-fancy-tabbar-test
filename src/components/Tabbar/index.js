@@ -22,21 +22,11 @@ export default class App extends Component {
       <View style={[style.container]}>
         <View style={[style.content]}>
           <View style={style.subContent}>
-            <Tab icon={require('../../assets/icons/home.png')} />
-            <Tab icon={require('../../assets/icons/home.png')} />
-            <Tab
-              iconContainerStyles={{
-                zIndex: -10,
-                position: 'relative',
-                backgroundColor: '#275aa2',
-                padding: 10,
-                borderRadius: 35,
-                transform: [{translateY: -5}],
-              }}
-              icon={require('../../assets/icons/home.png')}
-            />
-            <Tab icon={require('../../assets/icons/home.png')} />
-            <Tab icon={require('../../assets/icons/home.png')} />
+            <Tab name="feed" />
+            <Tab name="timeline" />
+            <Tab iconContainerStyles={style.centerIcon} name="home" />
+            <Tab name="profile" />
+            <Tab name="settings" />
           </View>
           <Svg
             version="1.1"
