@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 
+import Tab from './Tab';
 import style from './style';
 
 const tabs = [1, 2, 3, 4, 5];
@@ -21,34 +22,21 @@ export default class App extends Component {
       <View style={[style.container]}>
         <View style={[style.content]}>
           <View style={style.subContent}>
-            {tabs.map((_tabs, i) => {
-              const styles = {
-                opacity: 1,
-              };
-
-              if (i === 2) {
-                styles.zIndex = -10;
-                styles.position = 'relative';
-                styles.backgroundColor = '#373A50';
-                styles.padding = 10;
-                styles.borderRadius = 35;
-                styles.transform = [{translateY: -5}];
-              }
-
-              return (
-                <TouchableOpacity
-                  key={i}
-                  underlayColor={'transparent'}
-                  onPress={() => alert(i)}>
-                  <View style={{...styles, bottom: 15}}>
-                    <Image
-                      style={{width: 35, height: 35}}
-                      source={require('../../assets/icons/home.png')}
-                    />
-                  </View>
-                </TouchableOpacity>
-              );
-            })}
+            <Tab icon={require('../../assets/icons/home.png')} />
+            <Tab icon={require('../../assets/icons/home.png')} />
+            <Tab
+              iconContainerStyles={{
+                zIndex: -10,
+                position: 'relative',
+                backgroundColor: '#275aa2',
+                padding: 10,
+                borderRadius: 35,
+                transform: [{translateY: -5}],
+              }}
+              icon={require('../../assets/icons/home.png')}
+            />
+            <Tab icon={require('../../assets/icons/home.png')} />
+            <Tab icon={require('../../assets/icons/home.png')} />
           </View>
           <Svg
             version="1.1"
@@ -60,7 +48,7 @@ export default class App extends Component {
             viewBox="0 0 1092 200"
             space="preserve">
             <Path
-              fill={'#373A50'}
+              fill={'#275aa2'}
               stroke={'#373A50'}
               d={`M30,60h${this.state.pathX}.3c17.2,0,31,14.4,30,31.6c-0.2,2.7-0.3,5.5-0.3,8.2c0,71.2,58.1,129.6,129.4,130c72.1,0.3,130.6-58,130.6-130c0-2.7-0.1-5.4-0.2-8.1C${this.state.pathY}.7,74.5,${this.state.pathA}.5,60,${this.state.pathB}.7,60H1062c16.6,0,30,13.4,30,30v94c0,42-34,76-76,76H76c-42,0-76-34-76-76V90C0,73.4,13.4,60,30,60z`}
             />
