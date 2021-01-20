@@ -1,12 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: 'hidden',
-    marginHorizontal: 15,
-    marginBottom: 10,
-  },
   content: {
     flexDirection: 'column',
     zIndex: 0,
