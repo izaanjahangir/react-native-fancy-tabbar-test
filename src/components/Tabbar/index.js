@@ -1,14 +1,8 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  StyleSheet,
-  View,
-  Dimensions,
-  TouchableHighlight,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import Svg, {Circle, Path} from 'react-native-svg';
+import {View, TouchableOpacity, Image} from 'react-native';
+import Svg, {Path} from 'react-native-svg';
+
+import style from './style';
 
 const tabs = [1, 2, 3, 4, 5];
 export default class App extends Component {
@@ -24,9 +18,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={[styles.container]}>
-        <View style={[styles.content]}>
-          <View style={styles.subContent}>
+      <View style={[style.container]}>
+        <View style={[style.content]}>
+          <View style={style.subContent}>
             {tabs.map((_tabs, i) => {
               const styles = {
                 opacity: 1,
@@ -70,72 +64,9 @@ export default class App extends Component {
               stroke={'#373A50'}
               d={`M30,60h${this.state.pathX}.3c17.2,0,31,14.4,30,31.6c-0.2,2.7-0.3,5.5-0.3,8.2c0,71.2,58.1,129.6,129.4,130c72.1,0.3,130.6-58,130.6-130c0-2.7-0.1-5.4-0.2-8.1C${this.state.pathY}.7,74.5,${this.state.pathA}.5,60,${this.state.pathB}.7,60H1062c16.6,0,30,13.4,30,30v94c0,42-34,76-76,76H76c-42,0-76-34-76-76V90C0,73.4,13.4,60,30,60z`}
             />
-
-            {/* <Circle
-              fill={'#7EE6D2'}
-              stroke={'#7EE6D2'}
-              cx="546"
-              cy="100"
-              r="100"
-            /> */}
           </Svg>
-          {/* <View
-            style={{
-              position: 'absolute',
-              width: '100%',
-              transform: [{translateY: 20}],
-              alignItems: 'center',
-            }}>
-            <TouchableOpacity
-              style={{backgroundColor: 'purple'}}
-              onPress={() => alert('asd')}>
-              <View
-                style={{
-                  backgroundColor: 'red',
-                  width: 60,
-                  height: 60,
-                  borderRadius: 60,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Image
-                  style={{width: 35, height: 35}}
-                  source={require('../../assets/icons/home.png')}
-                />
-              </View>
-            </TouchableOpacity>
-          </View> */}
         </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: 'hidden',
-    marginHorizontal: 15,
-    marginBottom: 10,
-  },
-  content: {
-    flexDirection: 'column',
-    zIndex: 0,
-    flex: 1,
-    left: 0,
-    right: 0,
-    position: 'absolute',
-    bottom: 0,
-  },
-  subContent: {
-    flexDirection: 'row',
-    marginBottom: 0,
-    zIndex: 1,
-    position: 'absolute',
-    bottom: 0,
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    width: '100%',
-    paddingHorizontal: 10,
-  },
-});
