@@ -1,6 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, View, Image} from 'react-native';
 
+import globalHelpers from '../../../utils/globalHelpers';
 import style from './style';
 
 function Tab(props) {
@@ -57,10 +58,22 @@ function Tab(props) {
       <View
         style={[
           style.activeTab,
-          {bottom: 11, ...props.iconContainerStyles},
+          {bottom: 8},
           props.active && {backgroundColor: 'white'},
+          globalHelpers.isTabletOrIpad() && {
+            width: 60,
+            height: 60,
+            borderRadius: 60,
+          },
+          {...props.iconContainerStyles},
         ]}>
-        <Image style={style.icon} source={iconSource} />
+        <Image
+          style={[
+            style.icon,
+            globalHelpers.isTabletOrIpad() && {width: 35, height: 35},
+          ]}
+          source={iconSource}
+        />
       </View>
     </TouchableOpacity>
   );
