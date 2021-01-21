@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, View, Image} from 'react-native';
+import {TouchableOpacity, View, Image, Platform} from 'react-native';
 
 import globalHelpers from '../../../utils/globalHelpers';
 import style from './style';
@@ -54,7 +54,7 @@ function Tab(props) {
   }
 
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity style={props.containerStyles} onPress={handlePress}>
       <View
         style={[
           style.activeTab,
@@ -63,7 +63,7 @@ function Tab(props) {
           globalHelpers.isTabletOrIpad() && {
             width: 60,
             height: 60,
-            borderRadius: 60,
+            borderRadius: Platform.OS === 'android' ? 120 : 60,
           },
           {...props.iconContainerStyles},
         ]}>
@@ -80,6 +80,7 @@ function Tab(props) {
 }
 
 Tab.defaultProps = {
+  containerStyles: {},
   iconContainerStyles: {},
   name: 'default',
   active: false,

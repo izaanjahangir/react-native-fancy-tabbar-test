@@ -21,15 +21,14 @@ function Tabbar() {
   }
 
   const centerIcon = {
-    zIndex: -10,
-    position: 'relative',
     backgroundColor: '#275aa2',
     padding: 10,
     borderRadius: 35,
-    transform: [{translateY: -5}],
-    bottom: 30,
+    // transform: [{translateY: -5}],
+    // bottom: 30,
     width: 50,
     height: 50,
+    alignSelf: 'flex-start',
   };
 
   if (globalHelpers.isTabletOrIpad()) {
@@ -63,6 +62,7 @@ function Tabbar() {
         <Tab
           onPress={() => onTabPress('home')}
           active={activeTab === 'home'}
+          containerStyles={{alignSelf: 'flex-start'}}
           iconContainerStyles={centerIcon}
           name="home"
         />
@@ -78,7 +78,11 @@ function Tabbar() {
         />
       </View>
       <View
-        style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <Svg
           version="1.1"
           id="bottom-bar"
@@ -87,7 +91,6 @@ function Tabbar() {
           width={svgWidth}
           height={svgHeight}
           preserveAspectRatio="xMidYMax slice"
-          // style={{backgroundColor: "red"}}
           viewBox="0 0 502.7 149.8"
           space="preserve">
           <Path

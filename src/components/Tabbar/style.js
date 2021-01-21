@@ -20,6 +20,7 @@ export default StyleSheet.create({
     alignItems: 'flex-end',
     width: '100%',
     paddingHorizontal: 15,
+    height: 80,
   },
   centerIcon: {
     zIndex: -10,

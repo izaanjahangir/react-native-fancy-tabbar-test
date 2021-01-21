@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 export default StyleSheet.create({
   icon: {
@@ -8,7 +8,7 @@ export default StyleSheet.create({
   activeTab: {
     width: 40,
     height: 40,
-    borderRadius: 40,
+    borderRadius: Platform.OS === 'android' ? 80 : 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
