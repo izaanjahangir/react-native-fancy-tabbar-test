@@ -1,31 +1,15 @@
 import React from 'react';
 import {ScrollView, View, Text} from 'react-native';
 
-import Tabbar from '../../components/Tabbar';
 import style from './style';
 
 function Home() {
   return (
     <ScrollView contentContainerStyle={style.scrollViewContainer}>
       <View style={style.container}>
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+        {new Array(20).fill(0).map((_, i) => (
+          <Box key={i} />
+        ))}
       </View>
     </ScrollView>
   );
@@ -44,12 +28,12 @@ function Box() {
     '#40407a',
     '#2c2c54',
     '#227093',
-    "#cc8e35",
-    "#cd6133",
-    "#b33939",
-    "#34ace0",
-    "#ff9f1a",
-    "#ffb8b8"
+    '#cc8e35',
+    '#cd6133',
+    '#b33939',
+    '#34ace0',
+    '#ff9f1a',
+    '#ffb8b8',
   ];
   const randomIndex = Math.floor(Math.random() * colors.length);
 
