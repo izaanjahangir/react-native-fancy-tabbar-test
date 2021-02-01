@@ -1,14 +1,14 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 
-import Home from './src/screens/Home';
+import Navigation from './src/navigation';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{flex: 1}}>
-        <Home />
+        <Navigation />
       </SafeAreaView>
     </>
   );
