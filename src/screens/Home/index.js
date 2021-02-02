@@ -1,15 +1,22 @@
 import React from 'react';
-import {ScrollView, View, Text} from 'react-native';
+import {ScrollView, View, Text, ImageBackground} from 'react-native';
 
+import MainChart from '../../components/MainChart';
 import style from './style';
 
 function Home() {
   return (
     <ScrollView contentContainerStyle={style.scrollViewContainer}>
       <View style={style.container}>
-        {new Array(20).fill(0).map((_, i) => (
+        {/* {new Array(20).fill(0).map((_, i) => (
           <Box key={i} />
-        ))}
+        ))} */}
+        <ImageBackground
+        resizeMode="stretch"
+          style={{height: 250, width: '100%'}}
+          source={require('../../assets/images/bg.png')}>
+          <MainChart />
+        </ImageBackground>
       </View>
     </ScrollView>
   );
